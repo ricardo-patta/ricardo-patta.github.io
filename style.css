@@ -1,0 +1,286 @@
+/* --- VARIABLES & RESET --- */
+:root {
+    --primary-bg: #000000;      /* Bleu foncé sidebar */
+    --secondary-bg: #f5f6fa;    /* Gris clair fond */
+    --card-bg: #ffffff;         /* Blanc cartes */
+    --accent-color: #efc9a8;    /* Bouton téléchargement */
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --text-muted: #7f8c8d;
+    --tag-bg: #efc9a8;          /* Fond tags sidebar */
+    --badge-bg: #efc9a8;        /* Fond badge expérience */
+    --badge-text: #000000;      /* Texte badge expérience */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--secondary-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+
+.resume-container {
+    display: grid;
+
+    grid-template-columns: 320px 1fr;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Page gauche */
+.sidebar {
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    object-fit: cover;
+    background-color: #ccc;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.identity h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+
+.role {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Titres H2 dans la sidebar */
+.sidebar h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgb(239,201,168);
+    padding-bottom: 5px;
+}
+
+/* Contact  */
+.contact-info ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-info li {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    color: var(--accent-color);
+    width: 20px;
+}
+
+/* Boutons Social & Download */
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-social {
+    background-color: #efc9a8;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    transition: transform 0.2s;
+}
+
+.btn-download {
+    display: block;
+    background-color: var(--accent-color);
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-download:hover {
+    background-color: #ff3b30;
+}
+
+/* Compétences */
+.skills-sidebar h3 {
+    font-size: 0.9rem;
+    margin: 15px 0 10px;
+    opacity: 0.7;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background-color: var(--tag-bg);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+}
+
+/* Page droite*/
+.main-content {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.main-content h2 {
+    color: #efc9a8;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Style générique des cartes blanches */
+.section-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Expériences (Grid ou Flex pour les cartes) */
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permet le retour à la ligne si pas de place */
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    flex: 1 1 300px; /* Flex-grow, Flex-shrink, Basis */
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Bonus hover */
+}
+
+.badge {
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.company {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 0.9rem;
+}
+
+/* Formations */
+.education-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.education-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.education-item h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* Centres d'intérêt (FLEXBOX) */
+.interests-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.interest-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.interest-item i {
+    color: #4834d4; /* Couleur des icônes */
+}
+
+
+@media screen and (max-width: 900px) {
+    .resume-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        padding: 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info ul {
+        align-items: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .tags-container {
+        justify-content: center;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+}
